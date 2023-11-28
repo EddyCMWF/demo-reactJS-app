@@ -7,9 +7,9 @@ function App() {
     <><div className='App orange-border left-align'>
       <Header/>
       <p>Eddy pays tax</p>
-      {/* <p>{DataEntryField(`noob`)}</p> */}
-      <DataEntryField/>
-      <DataEntryField/>
+      <p>{DataEntryField({label: `This is a test entry`})}</p>
+      <DataEntryField label='Price excluding VAT'/>
+      <DataEntryField label='Price inluding VAT'/>
     </div></>
   );
 }

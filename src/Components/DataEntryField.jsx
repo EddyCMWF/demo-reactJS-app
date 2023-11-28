@@ -2,29 +2,14 @@
 
 
 
-const DataEntryField = () => {
+const DataEntryField = (props) => {
     return (
         <div>
-            Price excluding VAT:
+            {props.label.concat(': ')}
             <input type="number" id="lname" name="lname" input/>
         </div>
     );
 }
  
 export default DataEntryField;
-
-
-// const DataEntryField = (value) => {
-//     return (
-//         <>
-//             Price exc VAT: {value}
-//         </>
-//     );
-// }
- 
-// export default DataEntryField;
-
-
-
-
 
