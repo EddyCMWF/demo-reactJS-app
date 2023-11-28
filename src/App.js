@@ -1,11 +1,12 @@
 import DataEntryField from './Components/DataEntryField';
 import './App.css';
+import Header from './Components/Header';
 
 function App() {
   return (
     <><div className='App orange-border left-align'>
-      <p>Eddy</p>
-      <p>Says hello</p>
+      <Header/>
+      <p>Eddy pays tax</p>
       {/* <p>{DataEntryField(`noob`)}</p> */}
       <DataEntryField/>
       <DataEntryField/>
