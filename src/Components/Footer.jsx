@@ -2,7 +2,7 @@
 const Footer = (props) => {
     return ( 
         <footer>
-            The value being passed is: {props.value}
+            The value being passed is: {props.incValue}
         </footer>
      );
 }
