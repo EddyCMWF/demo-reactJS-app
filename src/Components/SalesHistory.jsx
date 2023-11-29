@@ -6,6 +6,7 @@ import SaleItem from "./SaleItem.model";
 import Sale from "./Sale";
 import Home from './Home';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 export const SalesHistory = (props) => {
     const sales = salesDataHistory.map(currentSaleItem => {
@@ -20,27 +21,24 @@ export const SalesHistory = (props) => {
         return <Sale saleItem={saleItem} key={saleItem._id} />
     });
     return (
-        <>
-            <Home/>
-            <Container className="p-5 mb-4 bg-light rounded-5">
-                <Row className="p-1 mb-1 bg-light rounded-5">
-                    <SalesHeader/>
-                </Row>
-                <Row className="p-1 mb-1 bg-light rounded-3">
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th><Link to='/'>Sale ID</Link></th>
-                            <th>Sale Price</th>
-                            <th>Total Price</th>
-                            <th>VAT To Pay</th>
-                            <th>VAT Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody>{sales}</tbody>
-                </table>
-                </Row>
-            </Container>
-        </>
+        <Container className="p-5 mb-4 bg-light rounded-5">
+            <Row className="p-1 mb-1 bg-light rounded-5">
+                <SalesHeader/>
+            </Row>
+            <Row className="p-1 mb-1 bg-light rounded-3">
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        <th><Link to='/'>Sale ID</Link></th>
+                        <th>Sale Price</th>
+                        <th>Total Price</th>
+                        <th>VAT To Pay</th>
+                        <th>VAT Rate</th>
+                    </tr>
+                </thead>
+                <tbody>{sales}</tbody>
+            </table>
+            </Row>
+        </Container>
     );
 }

@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { DisplayField } from './DisplayField';
 import { VATField } from './VatField';
 import { Col, Row } from 'react-bootstrap';
+import { Outlet } from 'react-router';
 
 const Home = () => {
   const [excValue, setExcValue] = useState(0);
@@ -40,28 +41,31 @@ const Home = () => {
   }, [vatRate])
 
   return (
-    <Container className="p-4 pb-2 mb-4 bg-light rounded-5">
-      <Header/>
-      <Row>
-        <VATField vatRateChanged={updateVATRate} currentVATRate={vatRate}/>
-      </Row>
-      <Row>
-        <DataEntryField
-          label='Price excluding VAT' handleValueChanged={addVat}
-          value={excValue === 0 ? "": excValue} 
-        />
-      </Row>
-      <Row>
-        <DisplayField label="VAT to Pay: " value={vatAmount}/>
-      </Row>
-      <Row>
-        <DataEntryField
-          label='Price including VAT' handleValueChanged={removeVat}
-          value={incValue === 0 ? "": incValue}
-        />
-      </Row>
-      <Footer incValue={incValue} />
-    </Container>
+    <>
+      <Container className="p-4 pb-2 mb-4 bg-light rounded-5">
+        <Header/>
+        <Row>
+          <VATField vatRateChanged={updateVATRate} currentVATRate={vatRate}/>
+        </Row>
+        <Row>
+          <DataEntryField
+            label='Price excluding VAT' handleValueChanged={addVat}
+            value={excValue === 0 ? "": excValue} 
+          />
+        </Row>
+        <Row>
+          <DisplayField label="VAT to Pay: " value={vatAmount}/>
+        </Row>
+        <Row>
+          <DataEntryField
+            label='Price including VAT' handleValueChanged={removeVat}
+            value={incValue === 0 ? "": incValue}
+          />
+        </Row>
+        <Footer incValue={incValue} />
+      </Container>
+      <Outlet/>
+    </>
   );
 }
 
