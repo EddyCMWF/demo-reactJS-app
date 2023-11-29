@@ -40,8 +40,8 @@ function App() {
   }, [vatRate])
 
   return (
-    <Container className="p-3 bg-dark">
-      <Container className="p-5 mb-4 bg-light rounded-5">
+    <Container className="p-3 mb-0 bg-dark">
+      <Container className="p-5 mb-0 bg-light rounded-5">
         <Header/>
         <Row>
           <VATField vatRateChanged={updateVATRate} currentVATRate={vatRate}/>
