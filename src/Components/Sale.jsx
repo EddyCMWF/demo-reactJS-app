@@ -4,8 +4,13 @@ import SaleItem from './SaleItem.model';
 import { Link } from 'react-router-dom';
 
 const Sale = ({ saleItem }) => {
+    const onClickHandler = (event)=>{
+        if ( event.target.tagName === "TD")
+            console.log( event )
+            console.log( saleItem.salePrice )
+    }
     return (
-        <tr>
+        <tr onClick={onClickHandler}>
             <td><Link to='/'>{saleItem._id}</Link></td>
             <td><Link to='/'>{saleItem.salePrice}</Link></td>
             <td><Link to='/'>{saleItem.totalPrice}</Link></td>
