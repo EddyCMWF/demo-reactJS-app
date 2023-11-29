@@ -1,11 +1,12 @@
 import { Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Footer = (props) => {
     return (
         <footer>
-            <Container className="mt-3 mb-0">
+            <Container className="mt-1 pt-1 pb-0 mb-0">
                 <Row>
-                    The value being passed is: {props.incValue}
+                    <Link to='/sales'>View sales history</Link>
                 </Row>
             </Container>
         </footer>

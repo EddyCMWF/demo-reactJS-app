@@ -1,8 +1,11 @@
+import { Container } from "react-bootstrap";
 
 const Header = () => {
     return ( 
         <header>
-            <strong>VAT Calculator</strong>
+            <Container className="p-1 mb-1 bg-light">
+                <h1><strong>VAT Calculator</strong></h1>
+            </Container>
         </header>
      );
 }
