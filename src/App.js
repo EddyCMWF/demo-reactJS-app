@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import { useState, useEffect } from "react";
 import { DisplayField } from './Components/DisplayField';
 import { VATField } from './Components/VatField';
+import { Col, Row } from 'react-bootstrap';
 
 function App() {
   const [excValue, setExcValue] = useState(0);
@@ -42,17 +43,24 @@ function App() {
     <Container className="p-3 bg-dark">
       <Container className="p-5 mb-4 bg-light rounded-5">
         <Header/>
-        <VATField vatRateChanged={updateVATRate} currentVATRate={vatRate}/>
-        <DataEntryField
-          label='Price excluding VAT' handleValueChanged={addVat}
-          value={excValue === 0 ? "": excValue} 
-        />
-        <DisplayField label="VAT to Pay: " value={vatAmount}/>
-        {excValue>=0 ?
-        <DataEntryField
-          label='Price including VAT' handleValueChanged={removeVat}
-          value={incValue === 0 ? "": incValue}
-        />: <></>}
+        <Row>
+          <VATField vatRateChanged={updateVATRate} currentVATRate={vatRate}/>
+        </Row>
+        <Row>
+          <DataEntryField
+            label='Price excluding VAT' handleValueChanged={addVat}
+            value={excValue === 0 ? "": excValue} 
+          />
+        </Row>
+        <Row>
+          <DisplayField label="VAT to Pay: " value={vatAmount}/>
+        </Row>
+        <Row>
+          <DataEntryField
+            label='Price including VAT' handleValueChanged={removeVat}
+            value={incValue === 0 ? "": incValue}
+          />
+        </Row>
         <Footer incValue={incValue} />
       </Container>
     </Container>

@@ -6,10 +6,10 @@ export const VATField = (props) =>
     return(
         <Container className="mb-2">
             <Row>
-                <Col>
+                <Col xs={2} sm={3}>
                     VAT Rate: 
                 </Col>
-                <Col>
+                <Col xs="auto">
                     <select onChange={(event)=>{
                             props.vatRateChanged(+event.target.value)
                         }}> 

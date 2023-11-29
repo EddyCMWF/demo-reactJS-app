@@ -1,8 +1,13 @@
+import { Container, Row } from "react-bootstrap";
 
 const Footer = (props) => {
-    return ( 
+    return (
         <footer>
-            The value being passed is: {props.incValue}
+            <Container>
+                <Row mt=3>
+                    The value being passed is: {props.incValue}
+                </Row>
+            </Container>
         </footer>
      );
 }
